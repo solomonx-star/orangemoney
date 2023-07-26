@@ -4,7 +4,7 @@ import React from 'react'
 const DataBundlesScreen = () => {
   return (
     <View>
-      <Text>TopUpScreen</Text>
+      <Text>DataBundlesScreen</Text>
     </View>
   )
 }

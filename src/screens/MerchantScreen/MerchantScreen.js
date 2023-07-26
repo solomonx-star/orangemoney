@@ -4,7 +4,7 @@ import React from 'react'
 const MerchantScreen = () => {
   return (
     <View>
-      <Text>TopUpScreen</Text>
+      <Text>MerchantScreen</Text>
     </View>
   )
 }

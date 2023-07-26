@@ -3,6 +3,7 @@ import { Text, View, ScrollView, Image, TouchableOpacity } from 'react-native';
 import { useState } from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { s } from 'react-native-wind';
+import TopUpScreen from './TopUpScreen/TopUpScreen';
 
 
 
@@ -13,32 +14,32 @@ const Home = ({navigation}) => {
     const [balance, setBalance] = useState('Show balance');
     
 
-    const cashout = () => {
-        navigation.navigate('Cashout')
-    }
+    // const cashout = () => {
+    //     navigation.navigate('Cashout')
+    // }
 
     const data = () => {
-        navigation.navigate('DataBundles')
+        navigation.navigate('DataBundlesScreen')
     }
 
     const merchant = () => {
-        navigation.navigate('Merchant')
+        navigation.navigate('MerchantScreen')
     }
 
-    const reverse = () => {
-        navigation.navigate('SelfReversal')
-    }
+    // const reverse = () => {
+    //     navigation.navigate('SelfReversal')
+    // }
 
     const topup = () => {
-        navigation.navigate('Topup')
+        navigation.navigate('TopUpScreen')
     }
 
-    const transaction = () => {
-        navigation.navigate('transaction')
-    }
+    // const transaction = () => {
+    //     navigation.navigate('transaction')
+    // }
 
     const transfer = () => {
-        navigation.navigate('TransferMoney')
+        navigation.navigate('TransferScreen')
     }
 
     const handle = () => {
@@ -117,7 +118,7 @@ const Home = ({navigation}) => {
             </View>
             <View style ={s `flex-row justify-between ml-3 mr-3 mt-7`}>
             <View>
-                <TouchableOpacity onPress={topup()}>
+                <TouchableOpacity onPress={topup}>
                 <View style ={s `bg-white w-28 h-32 rounded`}>
                         <Image 
                         source={require('../../assets/orange1.png')}
@@ -129,7 +130,7 @@ const Home = ({navigation}) => {
                 <Text style ={s `text-center font-bold`}>credit</Text>
             </View>
             <View>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={transfer}>
                 <View style = {s `bg-white w-28 h-32 rounded`}>
                 <Image 
                         source={require('../../assets/orange2.jpeg')}
@@ -141,7 +142,7 @@ const Home = ({navigation}) => {
                 <Text style = {s `text-center font-bold`}>Money</Text>
             </View>
             <View>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={data}>
                 <View style = {s `bg-white w-28 h-32 rounded`}>
                 <Image 
                         source={require('../../assets/orange3.jpeg')}
@@ -157,7 +158,7 @@ const Home = ({navigation}) => {
             
             <View style = {s `flex-row justify-between mt-8 mr-3 ml-3`}>
                 <View>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={merchant}>
                     <View style = {s `bg-white h-20 w-20 rounded-full`}>
                     <Image 
                         source={require('../../assets/merchant.jpeg')}
