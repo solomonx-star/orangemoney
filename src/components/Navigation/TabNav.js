@@ -10,6 +10,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import Account from "../../screens/Account"
 import Partners from "../../screens/Partners"
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import topup from '../../screens/topup'
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator()
@@ -17,11 +18,13 @@ const Stack = createNativeStackNavigator()
 
 //HomeScreen and tabs
 const HomeScreen = ()=>{
+  
     return(
         <Stack.Navigator
         screenOptions={{headerShown:false}}
         >
         <Stack.Screen name='HomeScreen' component={Home}/>
+        <Stack.Screen name='Topup' component={topup} />
         </Stack.Navigator>
     )
 }

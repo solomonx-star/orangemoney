@@ -8,7 +8,7 @@ import { s } from 'react-native-wind';
 
 
 
-const Home = () => {
+const Home = ({navigation}) => {
     const [balance, setBalance] = useState('Show balance');
     
 
