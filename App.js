@@ -5,7 +5,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 import { StatusBar } from 'expo-status-bar';
 import { Text, View, ScrollView, SafeAreaView } from 'react-native';
-import Home from './src/components/principal account';
+import Home from './src/components/Home';
 import { NavigationContainer } from '@react-navigation/native';
 import Account from './src/components/my account';
 import Partners from './src/components/our partners';

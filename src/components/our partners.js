@@ -11,7 +11,7 @@ const Partners = () => {
         <ScrollView>
             <View>
                 <View>
-           <Text style = {s `text-lg font-bold mt-2 ml-3`}>Pay your merchant</Text>
+                    <Text style = {s `text-lg font-bold mt-2 ml-3`}>Pay your merchant</Text>
                 </View>
                 <View style = {s `bg-white h-16 mt-3 mr-3 ml-3 rounded-md shadow-sm`}>
                     <View style = {s `flex-row`}>
@@ -28,8 +28,8 @@ const Partners = () => {
                 </View>
                 <View style = {s `bg-white h-screen mt-4`}>
                     <View style = {s `flex-row justify-evenly mt-3`}>
-                        <View style = {s `pr-36`}>
-                        <View style = {s ``}>
+                        <View style = {s `pr-32`}>
+                        <View style = {s `pr-10`}>
                             <Text style = {s `text-lg font-bold`}>Pay your bills</Text>
                         </View>
                         </View>
@@ -64,6 +64,7 @@ const Partners = () => {
                             <Image 
                         source={require('../../assets/Guma.png')}
                         style={{ width: '100%', height: '100%' }}
+                        resizeMode="stretch"
                         />
                             </View>
                             <View>
@@ -80,6 +81,7 @@ const Partners = () => {
                         <Image 
                         source={require('../../assets/Ignite.jpeg')}
                         style={{ width: '100%', height: '100%' }}
+                        resizeMode="stretch"
                         />
                         </View>
                             <View>
@@ -102,7 +104,7 @@ const Partners = () => {
                             </TouchableOpacity>
                         </View>
                     </View>
-                    <View style = {s `flex-row mt-4`}>
+                    <View style = {s `flex-row mt-6`}>
                         <View>
                             <View style = {s `bg-slate-300 h-14 w-14 ml-3 rounded-full`}>
                             <Image 
@@ -116,16 +118,16 @@ const Partners = () => {
                             <Text style = {s `ml-5 text-xs`}>Bank</Text>
                         </View>
                     </View>
-                    <View style = {s `flex-row mt-20 justify-evenly`}>
-                    <View style = {s `pr-40`}>
+                    <View style = {s `flex-row mt-20 justify-evenly pr-6`}>
+                    <View style = {s `pr-20`}>
                         <Text style = {s `text-lg font-bold`}>Other services</Text>
-                    </View>
-                    <View>
+                    </View >
+                    <View style = {s `pl-14`}>
                         <Text style = {s `text-orange-600 mt-2`}>See more</Text>
                     </View>
                     </View>
                     <TouchableOpacity>
-                    <View style = {s `mt-4 flex-row`}>
+                    <View style = {s `mt-6 flex-row`}>
                         
                             <View style = {s `bg-slate-300 h-14 w-14 ml-3`}></View>
                             <View>
@@ -136,7 +138,7 @@ const Partners = () => {
                     </View>
                     </TouchableOpacity>
                     <TouchableOpacity>
-                                <View style = {s `mt-4 flex-row`}>  
+                            <View style = {s `mt-4 flex-row`}>  
                         
                             <View style = {s `bg-slate-300 h-14 w-14 ml-3`}>
                             <Image 
@@ -161,7 +163,7 @@ const Partners = () => {
                                 />
                             </View>
                             <View>
-                            <Text style = {s `ml-5 text-base font-bstyle`}>Data Bundles</Text>
+                            <Text style = {s `ml-5 text-base font-bold`}>Data Bundles</Text>
                             <Text style = {s `ml-5 text-xs`}>Other services</Text>
                             </View>
                         

@@ -29,8 +29,10 @@ const Account = () =>{
                     <View style ={s `mt-10 ml-3 flex-row`}>
                         <View style ={s `bg-slate-200 h-10 w-10`}></View>
                         <Text style ={s `mt-2 ml-3 text-base font-bold`}>QR Code reader</Text>
-                        <View style ={s `mt-3 ml-48`}>
+                        <View style = {s `ml-20`}>
+                        <View style ={s `mt-3 ml-32`}>
                             <Icon name="chevron-right" size={15}  />
+                        </View>
                         </View>
                     </View>
                     <View style ={s `border mt-7 border-gray-300`}></View>
@@ -40,15 +42,19 @@ const Account = () =>{
                     <View style ={s `mt-10 ml-3 flex-row`}>
                         <View style ={s `bg-slate-200 h-10 w-10`}></View>
                         <Text style ={s `mt-2 ml-3 text-base font-bold`}>Change secret code</Text>
-                        <View style ={s `mt-3 ml-40`}>
+                        <View style = {s `ml-32`}>
+                        <View style ={s `mt-3 ml-12`}>
                             <Icon name="chevron-right" size={15}  />
+                        </View>
                         </View>
                     </View>
                     <View style ={s `mt-5 ml-3 flex-row`}>
                         <View style ={s `bg-slate-200 h-10 w-10`}></View>
                         <Text style ={s `mt-2 ml-3 text-base font-bold`}>Touch ID</Text>
-                        <View style ={s `mt-3 ml-64`}>
+                        <View style = {s `ml-32 `}>
+                        <View style ={s `mt-3 ml-32`}>
                             <Icon name="chevron-right" size={15}  />
+                        </View>
                         </View>
                     </View>
                     <View style ={s `border mt-10 border-gray-300`}></View>
@@ -59,22 +65,28 @@ const Account = () =>{
                         <View style ={s `bg-slate-200 h-10 w-10`}>
                         </View>
                         <Text style ={s `mt-2 ml-3 text-base font-bold`}>Share the App</Text>
-                        <View style ={s `mt-3 ml-48`}>
+                        <View style ={s `ml-24`}>
+                        <View style ={s `mt-3 ml-28`}>
                             <Icon name="chevron-right" size={15}  />
+                        </View>
                         </View>
                     </View>
                     <View style ={s `mt-5 ml-3 flex-row`}>
                         <View style ={s `bg-slate-200 h-10 w-10`}></View>
                         <Text style ={s `mt-2 ml-3 text-base font-bold`}>Contact us</Text>
-                        <View style ={s `mt-3 ml-56`}>
+                        <View style = {s `ml-32`}>
+                        <View style ={s `mt-3 ml-28`}>
                             <Icon name="chevron-right" size={15}  />
+                        </View>
                         </View>
                     </View>
                     <View style ={s `mt-5 ml-3 flex-row`}>
                         <View style ={s `bg-slate-200 h-10 w-10`}></View>
                         <Text style ={s `mt-2 ml-3 text-base font-bold`}>About</Text>
-                        <View style ={s `mt-3 ml-64`}>
+                        <View style = {s `ml-32`}>
+                        <View style ={s `mt-3 ml-32`}>
                             <Icon name="chevron-right" size={15} />
+                        </View>
                         </View>
                     </View>
                 </View>
