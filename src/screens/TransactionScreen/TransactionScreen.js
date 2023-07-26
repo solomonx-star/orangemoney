@@ -1,12 +1,12 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const TopUpScreen = () => {
+const TransactionScreen = () => {
   return (
     <View>
-      <Text>TopUpScreen</Text>
+      <Text>Transaction</Text>
     </View>
   )
 }
 
-export default TopUpScreen
+export default TransactionScreen

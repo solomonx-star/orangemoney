@@ -1,12 +1,12 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const TopUpScreen = () => {
+const TransferScreen = () => {
   return (
     <View>
-      <Text>TopUpScreen</Text>
+      <Text>TransferScreen</Text>
     </View>
   )
 }
 
-export default TopUpScreen
+export default TransferScreen

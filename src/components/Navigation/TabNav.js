@@ -11,6 +11,12 @@ import Account from "../../screens/Account"
 import Partners from "../../screens/Partners"
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import TopUpScreen from '../../screens/TopUpScreen/TopUpScreen';
+import DataBundlesScreen from '../../screens/DataBundlesScreen/DataBundlesScreen';
+import CashoutScreen from '../../screens/CashoutScreen/CashoutScreen';
+import TransferScreen from '../../screens/TransferScreen/TransferScreen';
+import TransactionScreen from '../../screens/TransactionScreen/TransactionScreen';
+import MerchantScreen from '../../screens/MerchantScreen/MerchantScreen';
+import SelfReversal from '../../screens/SelfReversalScreen/selfReversalScreen';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator()
@@ -25,6 +31,12 @@ const HomeScreen = ()=>{
         >
         <Stack.Screen name='HomeScreen' component={Home}/>
         <Stack.Screen name='TopUpScreen' component={TopUpScreen}/>
+        <Stack.Screen name='TransferScreen' component={TransferScreen}/>
+        <Stack.Screen name='DataBundlesScreen' component={DataBundlesScreen}/>
+        <Stack.Screen name='CashoutScreen' component={CashoutScreen}/>
+        <Stack.Screen name='TransactionScreen' component={TransactionScreen}/>
+        <Stack.Screen name='MerchantScreen' component={MerchantScreen}/>
+        <Stack.Screen name='SelfReversalScreen' component={SelfReversal}/>
         </Stack.Navigator>
     )
 }

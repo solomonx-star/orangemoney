@@ -8,6 +8,7 @@ import { s } from 'react-native-wind';
 
 
 
+
 const Home = ({navigation}) => {
     const [balance, setBalance] = useState('Show balance');
     
@@ -116,7 +117,7 @@ const Home = ({navigation}) => {
             </View>
             <View style ={s `flex-row justify-between ml-3 mr-3 mt-7`}>
             <View>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={topup()}>
                 <View style ={s `bg-white w-28 h-32 rounded`}>
                         <Image 
                         source={require('../../assets/orange1.png')}

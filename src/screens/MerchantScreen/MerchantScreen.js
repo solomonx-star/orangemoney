@@ -1,7 +1,7 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const TopUpScreen = () => {
+const MerchantScreen = () => {
   return (
     <View>
       <Text>TopUpScreen</Text>
@@ -9,4 +9,4 @@ const TopUpScreen = () => {
   )
 }
 
-export default TopUpScreen
+export default MerchantScreen
