@@ -1,5 +1,5 @@
 
-import { Text, View, ScrollView, Image, TouchableOpacity, Modal } from 'react-native';
+import { Text, View, ScrollView, Image, TouchableOpacity, Modal, StatusBar } from 'react-native';
 import { useState } from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { s } from 'react-native-wind';
@@ -61,10 +61,13 @@ const Home = ({navigation}) => {
             return <Icon name="eye-slash" size={20}  />;
         }
     }
-
+ 
 
     return(
-        <ScrollView>
+        <ScrollView 
+        style={{flex:1,         paddingTop:Platform.OS==="android"? StatusBar.currentHeight:40,
+         }}
+        >
         <View style ={s ``} >
             <View style = {s `bg-white rounded mt-3 ml-3 mr-64 h-7 w-36`}>
                 <View style ={s `ml-3`}>
@@ -295,42 +298,48 @@ const Home = ({navigation}) => {
             </View>
             <Modal
                 animationType="slide"  // Set the type of animation for modal appearance
-                presentationStyle='formSheet'
-                transparent={false} // Make the modal transparent
+                transparent={true} // Make the modal transparent
+                
                 visible={modalVisible} // Control the visibility of the modal
                 onRequestClose={() => {
           // Handle modal closing (e.g., Android back button press)
           setModalVisible(false);
         }}
       >
-        <View style={s ``}>
-          <Text style={s `ml-4 font-bold text-base mt-4`}>Top up credit</Text>
-          <View style={s `flex-row mt-7 ml-4`}>
-            <View>
-                <Icon name='mobile' size={40} />
-            </View>
-          <TouchableOpacity style={s ``}>
-            <Text style={s`mt-2 ml-7 text-base`}>My number</Text>
-          </TouchableOpacity>
-          <View style = {s `ml-28`}>
-                        <View style ={s `mt-3 ml-32`}>
-                            <Icon name="chevron-right" size={15}  />
-                        </View>
-                        </View>
+        <View style={{backgroundColor: 'rgba(52, 52, 52, 0.8)', flex:1, 
+    }}
+        >
+        <View style={s `flex-1 justify-end `}>
+        <View style={s `bg-white rounded-t-3xl pb-12`}>
+        <Text style={s `ml-4 font-bold text-base mt-4 `}>Top up credit</Text>
+        <View style={s `flex-row mt-7 ml-4`}>
+          <View>
+              <Icon name='mobile' size={40} />
           </View>
-          <View style={s `flex-row mt-7 ml-4`}>
-            <View>
-                <Icon name='address-book' size={30} />
-            </View>
-          <TouchableOpacity style={s ``}>
-            <Text style={s`mt-2 ml-4 text-base`}>Another number</Text>
-          </TouchableOpacity>
-          <View style = {s `ml-20`}>
-                        <View style ={s `mt-3 ml-32`}>
-                            <Icon name="chevron-right" size={15}  />
-                        </View>
-                        </View>
+        <TouchableOpacity style={s ``}>
+          <Text style={s`mt-2 ml-7 text-base`}>My number</Text>
+        </TouchableOpacity>
+        <View style = {s `ml-28`}>
+                      <View style ={s `mt-3 ml-32`}>
+                          <Icon name="chevron-right" size={15}  />
+                      </View>
+                      </View>
+        </View>
+        <View style={s `flex-row mt-7 ml-4`}>
+          <View>
+              <Icon name='address-book' size={30} />
           </View>
+        <TouchableOpacity style={s ``}>
+          <Text style={s`mt-2 ml-4 text-base`}>Another number</Text>
+        </TouchableOpacity>
+        <View style = {s `ml-20`}>
+                      <View style ={s `mt-3 ml-32`}>
+                          <Icon name="chevron-right" size={15}  />
+                      </View>
+                      </View>
+        </View>
+      </View>
+        </View>
         </View>
         </Modal>
         </View>
