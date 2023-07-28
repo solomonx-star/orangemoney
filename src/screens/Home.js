@@ -299,10 +299,10 @@ const Home = ({navigation}) => {
                 transparent={false} // Make the modal transparent
                 visible={modalVisible} // Control the visibility of the modal
                 onRequestClose={() => {
-          // Handle modal closing (e.g., Android back button press)
-          setModalVisible(false);
-        }}
-      >
+                // Handle modal closing (e.g., Android back button press)
+                setModalVisible(false);
+            }}
+            >
         <View style={s ``}>
           <Text style={s `ml-4 font-bold text-base mt-4`}>Top up credit</Text>
           <View style={s `flex-row mt-7 ml-4`}>
