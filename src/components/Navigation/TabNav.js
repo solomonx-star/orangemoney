@@ -75,7 +75,8 @@ export default function TabNav() {
         <Tab.Navigator screenOptions={{
           tabBarActiveTintColor: 'gray'
           
-        }}>
+        }}
+        >
           <Tab.Screen name="Home" component={HomeScreen} options = {{headerTitle: 'Home', headerTitleAlign:'left', tabBarIcon: ({ color, size }) => (
             <MaterialIcons name="home" size={30} color={'orange'} />
           ), }}/>

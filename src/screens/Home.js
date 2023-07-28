@@ -1,5 +1,5 @@
 
-import { Text, View, ScrollView, Image, TouchableOpacity } from 'react-native';
+import { Text, View, ScrollView, Image, TouchableOpacity, Modal } from 'react-native';
 import { useState } from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { s } from 'react-native-wind';
@@ -12,11 +12,15 @@ import TopUpScreen from './TopUpScreen/TopUpScreen';
 
 const Home = ({navigation}) => {
     const [balance, setBalance] = useState('Show balance');
-    
+    const [modalVisible, setModalVisible] = useState(false);
 
-    // const cashout = () => {
-    //     navigation.navigate('Cashout')
-    // }
+    const toggleModal = () => {
+    setModalVisible(!modalVisible);
+    };
+
+    const cashout = () => {
+        navigation.navigate('CashoutScreen')
+    }
 
     const data = () => {
         navigation.navigate('DataBundlesScreen')
@@ -26,17 +30,17 @@ const Home = ({navigation}) => {
         navigation.navigate('MerchantScreen')
     }
 
-    // const reverse = () => {
-    //     navigation.navigate('SelfReversal')
-    // }
+    const reverse = () => {
+        navigation.navigate('SelfReversalScreen')
+    }
 
     const topup = () => {
         navigation.navigate('TopUpScreen')
     }
 
-    // const transaction = () => {
-    //     navigation.navigate('transaction')
-    // }
+    const transaction = () => {
+        navigation.navigate('TransactionScreen')
+    }
 
     const transfer = () => {
         navigation.navigate('TransferScreen')
@@ -118,7 +122,7 @@ const Home = ({navigation}) => {
             </View>
             <View style ={s `flex-row justify-between ml-3 mr-3 mt-7`}>
             <View>
-                <TouchableOpacity onPress={topup}>
+                <TouchableOpacity onPress={toggleModal}>
                 <View style ={s `bg-white w-28 h-32 rounded`}>
                         <Image 
                         source={require('../../assets/orange1.png')}
@@ -171,7 +175,7 @@ const Home = ({navigation}) => {
                     <Text style = {s `text-center font-bold`}>merchant</Text>
                 </View>
                 <View>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={cashout}>
                 <View style = {s `bg-white h-20 w-20`}>
                 <Image 
                         source={require('../../assets/orangemoney.jpeg')}
@@ -184,7 +188,7 @@ const Home = ({navigation}) => {
                     <Text style = {s `text-center font-bold`}>Send to</Text>
                 </View>
                 <View>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={reverse}>
                 <View style = {s `bg-white h-20 w-20 `}>
                 <Image 
                         source={require('../../assets/reverse.jpeg')}
@@ -193,7 +197,7 @@ const Home = ({navigation}) => {
                 </View>
                 </TouchableOpacity>
                     
-                    <Text style = {s `text-center font-bold mt-3`}>Self</Text>
+                    <Text style = {s `text-center font-bold mt-3,`}>Self</Text>
                     <Text style = {s `text-center font-bold`}>Reversal</Text>
                 </View>
             </View>
@@ -289,6 +293,46 @@ const Home = ({navigation}) => {
                     </TouchableOpacity>
                 </View>
             </View>
+            <Modal
+                animationType="slide"  // Set the type of animation for modal appearance
+                presentationStyle='formSheet'
+                transparent={false} // Make the modal transparent
+                visible={modalVisible} // Control the visibility of the modal
+                onRequestClose={() => {
+          // Handle modal closing (e.g., Android back button press)
+          setModalVisible(false);
+        }}
+      >
+        <View style={s ``}>
+          <Text style={s `ml-4 font-bold text-base mt-4`}>Top up credit</Text>
+          <View style={s `flex-row mt-7 ml-4`}>
+            <View>
+                <Icon name='mobile' size={40} />
+            </View>
+          <TouchableOpacity style={s ``}>
+            <Text style={s`mt-2 ml-7 text-base`}>My number</Text>
+          </TouchableOpacity>
+          <View style = {s `ml-28`}>
+                        <View style ={s `mt-3 ml-32`}>
+                            <Icon name="chevron-right" size={15}  />
+                        </View>
+                        </View>
+          </View>
+          <View style={s `flex-row mt-7 ml-4`}>
+            <View>
+                <Icon name='address-book' size={30} />
+            </View>
+          <TouchableOpacity style={s ``}>
+            <Text style={s`mt-2 ml-4 text-base`}>Another number</Text>
+          </TouchableOpacity>
+          <View style = {s `ml-20`}>
+                        <View style ={s `mt-3 ml-32`}>
+                            <Icon name="chevron-right" size={15}  />
+                        </View>
+                        </View>
+          </View>
+        </View>
+        </Modal>
         </View>
         </ScrollView>
     );
