@@ -13,10 +13,15 @@ import TopUpScreen from './TopUpScreen/TopUpScreen';
 const Home = ({navigation}) => {
     const [balance, setBalance] = useState('Show balance');
     const [modalVisible, setModalVisible] = useState(false);
+    const [showModal, setShowModal] = useState(false)
 
     const toggleModal = () => {
     setModalVisible(!modalVisible);
     };
+
+    const toggleModal1 = () => {
+    setShowModal(!showModal);
+        };
 
     const cashout = () => {
         navigation.navigate('CashoutScreen')
@@ -165,7 +170,7 @@ const Home = ({navigation}) => {
             
             <View style = {s `flex-row justify-between mt-8 mr-3 ml-3`}>
                 <View>
-                    <TouchableOpacity onPress={merchant}>
+                    <TouchableOpacity onPress={toggleModal1}>
                     <View style = {s `bg-white h-20 w-20 rounded-full`}>
                     <Image 
                         source={require('../../assets/merchant.jpeg')}
@@ -339,6 +344,61 @@ const Home = ({navigation}) => {
                       </View>
         </View>
       </View>
+             </View>
+             </View>   
+           
+        
+        </Modal>
+        <Modal
+                animationType="slide"  // Set the type of animation for modal appearance
+                presentationStyle='formSheet'
+                transparent={false} // Make the modal transparent
+                visible={showModal} // Control the visibility of the modal
+                onRequestClose={() => {
+                // Handle modal closing (e.g., Android back button press)
+                setShowModal(false);
+            }}
+            >
+        <View style={s ``}>
+            <Text style={s `ml-4 font-bold text-base mt-4`}>Pay an Orange Money partner merchant</Text>
+        <View style={s `flex-row mt-7 ml-4`}>
+            <View>
+                <Icon name='lock' size={40} />
+            </View>
+            <TouchableOpacity style={s ``}>
+                <Text style={s`mt-2 ml-4 text-base`}>Merchant code</Text>
+            </TouchableOpacity>
+        <View style = {s `ml-28`}>
+            <View style ={s `mt-3 ml-28 pl-1`}>
+                <Icon name="chevron-right" size={15}  />
+            </View>
+        </View>
+        </View>
+            <View style={s `flex-row mt-7 ml-4`}>
+            <View>
+                <Icon name='phone' size={30} />
+            </View>
+            <TouchableOpacity style={s ``}>
+                <Text style={s`mt-1 ml-4 text-base`}>Merchant phone number</Text>
+            </TouchableOpacity>
+        <View style = {s `ml-20`}>
+            <View style ={s `mt-3 ml-20`}>
+                <Icon name="chevron-right" size={15}  />
+            </View>
+        </View>
+        </View>
+        <View style={s `flex-row mt-7 ml-4`}>
+            <View>
+                <Icon name='qrcode' size={30} />
+            </View>
+            <TouchableOpacity style={s ``}>
+                <Text style={s`mt-1 ml-4 text-base`}>QR Code</Text>
+            </TouchableOpacity>
+        <View style = {s `ml-20`}>
+            <View style ={s `mt-3 ml-32 pl-16`}>
+                <Icon name="chevron-right" size={15}  />
+            </View>
+        </View>
         </View>
         </View>
         </Modal>
