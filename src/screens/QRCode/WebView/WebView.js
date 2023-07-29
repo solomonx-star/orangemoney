@@ -5,9 +5,9 @@ const Webview = ({route}) => {
     const {data} = route.params
     console.log(data)
   return (
-   <WebView
-   source={{uri:''}}
-   />
+    <WebView
+    source={{uri:''}}
+    />
   )
 }
 

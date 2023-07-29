@@ -32,7 +32,7 @@ const [dataMain,setData]= useState('')
     if(data){
         Linking.openURL(`${data}`)
         setTimeout(() => {
-            navigation.navigate('AccountHome')
+            navigation.navigate('Home')
         }, 1000);
     }
   };
@@ -62,7 +62,7 @@ const [dataMain,setData]= useState('')
       style={{backgroundColor: "white",}}
       title={'Cancel'}
       onPress={() => {
-        navigation.navigate('AccountHome')
+        navigation.navigate('HomeScreen')
       }}
       />
       </View>

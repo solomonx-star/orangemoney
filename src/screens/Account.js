@@ -1,6 +1,6 @@
 import "react-native-gesture-handler";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import { View, Text, ScrollView, Platform } from "react-native";
+import { View, Text, ScrollView, Platform, StatusBar } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 import Icons from "react-native-vector-icons/MaterialCommunityIcons";
 import Icons1 from "react-native-vector-icons/Fontisto";

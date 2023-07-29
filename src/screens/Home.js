@@ -1,9 +1,10 @@
 
-import { Text, View, ScrollView, Image, TouchableOpacity, Modal, StatusBar, TouchableWithoutFeedback } from 'react-native';
+import { Text, View, ScrollView, Image, Modal, StatusBar, TouchableWithoutFeedback } from 'react-native';
 import { useState } from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { s } from 'react-native-wind';
-import TopUpScreen from './TopUpScreen/TopUpScreen';
+import { useNavigation } from "@react-navigation/native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 
 
@@ -11,6 +12,7 @@ import TopUpScreen from './TopUpScreen/TopUpScreen';
 
 
 const Home = ({navigation}) => {
+    const Navigation = useNavigation();
     const [balance, setBalance] = useState('Show balance');
     const [modalVisible, setModalVisible] = useState(false);
     const [showModal, setShowModal] = useState(false)
@@ -293,7 +295,10 @@ const Home = ({navigation}) => {
                         style={{ width: '100%', height: '100%', borderRadius: 8 }}
                         />
                     </View>
-                    <TouchableOpacity>
+                    <TouchableOpacity
+                    onPress={() => {
+                        Navigation.navigate("HomeScanner");
+                    }}>
                     <View>
                     <Text style ={s `ml-3 font-bold mt-3`}>Scan a QR cde linked to an {'\n'}Orange money service. </Text>
                     <Text style ={s `text-orange-600 mt-10 ml-3 font-bold`}>Scan</Text>
@@ -313,11 +318,11 @@ const Home = ({navigation}) => {
         }}
       >
          <TouchableWithoutFeedback onPress={() => setModalVisible(!modalVisible)}>
-          <View style={s `flex-1 justify-center`}>
-          <View style={{backgroundColor: 'rgba(52, 52, 52, 0.8)', flex:1
+          
+          <View style={{backgroundColor: 'rgba(52, 52, 52, 0.1)', flex:1
     }}
         >
-        <View style={s `flex-1 justify-end rounded`}>
+            <View style={s `flex-1 justify-end rounded`}>
         <View style={s `bg-white rounded-t-3xl pb-12`}>
         <Text style={s `ml-4 font-bold text-base mt-4 `}>Top up credit</Text>
         <View style={s `flex-row mt-7 ml-4`}>
@@ -348,9 +353,13 @@ const Home = ({navigation}) => {
         </View>
       </View>
              </View>
-             </View>
           </View>
+          
+          
         </TouchableWithoutFeedback>
+        
+        
+             
            
            
         
@@ -368,7 +377,7 @@ const Home = ({navigation}) => {
       >
         <TouchableWithoutFeedback onPress={() => setShowModal(!showModal)}>
           <View style={s `flex-1 justify-center`}>
-          <View style={{backgroundColor: 'rgba(52, 52, 52, 0.8)', flex:1
+          <View style={{backgroundColor: 'rgba(53, 53, 53, 0.1)', flex:1
     }}
         >
         <View style={s `flex-1 justify-end rounded`}>
@@ -405,7 +414,10 @@ const Home = ({navigation}) => {
           <View>
               <Icon name='qrcode' size={30} />
           </View>
-        <TouchableOpacity style={s ``}>
+        <TouchableOpacity style={s ``} 
+        onPress={() => {
+            Navigation.navigate("Scanner");
+          }}>
           <Text style={s`mt-1 ml-4 text-base`}>QR Code</Text>
         </TouchableOpacity>
         <View style = {s `ml-32 pl-3`}>

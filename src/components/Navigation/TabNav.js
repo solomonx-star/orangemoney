@@ -19,6 +19,7 @@ import MerchantScreen from '../../screens/MerchantScreen/MerchantScreen';
 import SelfReversal from '../../screens/SelfReversalScreen/selfReversalScreen';
 import Scanner from '../../screens/QRCode/Scanner';
 import Webview from '../../screens/QRCode/WebView/WebView';
+import HomeScanner from '../../screens/QRCode/HomeScanner/HomeScanner';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator()
@@ -39,6 +40,7 @@ const HomeScreen = ()=>{
         <Stack.Screen name='TransactionScreen' component={TransactionScreen}/>
         <Stack.Screen name='MerchantScreen' component={MerchantScreen}/>
         <Stack.Screen name='SelfReversalScreen' component={SelfReversal}/>
+        <Stack.Screen name='HomeScanner' component={HomeScanner}/>
         </Stack.Navigator>
     )
 }
