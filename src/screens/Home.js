@@ -298,6 +298,7 @@ const Home = ({navigation}) => {
                     </TouchableOpacity>
                 </View>
             </View>
+            <View style= {s ``}>
             <Modal
                 animationType="slide"  // Set the type of animation for modal appearance
                 presentationStyle='formSheet'
@@ -308,7 +309,7 @@ const Home = ({navigation}) => {
                 setModalVisible(false);
             }}
             >
-        <View style={s ``}>
+        <View style={s ` `}>
             <Text style={s `ml-4 font-bold text-base mt-4`}>Top up credit</Text>
         <View style={s `flex-row mt-7 ml-4`}>
             <View>
@@ -338,6 +339,7 @@ const Home = ({navigation}) => {
         </View>
         </View>
         </Modal>
+            </View>
         <Modal
                 animationType="slide"  // Set the type of animation for modal appearance
                 presentationStyle='formSheet'
