@@ -1,5 +1,5 @@
 
-import { Text, View, ScrollView, Image, TouchableOpacity, Modal, StatusBar } from 'react-native';
+import { Text, View, ScrollView, Image, TouchableOpacity, Modal, StatusBar, TouchableWithoutFeedback } from 'react-native';
 import { useState } from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { s } from 'react-native-wind';
@@ -301,32 +301,25 @@ const Home = ({navigation}) => {
                     </TouchableOpacity>
                 </View>
             </View>
-            <View style= {s ``}>
+            
             <Modal
                 animationType="slide"  // Set the type of animation for modal appearance
                 transparent={true} // Make the modal transparent
                 
                 visible={modalVisible} // Control the visibility of the modal
                 onRequestClose={() => {
-<<<<<<< HEAD
-                // Handle modal closing (e.g., Android back button press)
-                setModalVisible(false);
-            }}
-            >
-        <View style={s ` `}>
-            <Text style={s `ml-4 font-bold text-base mt-4`}>Top up credit</Text>
-=======
           // Handle modal closing (e.g., Android back button press)
           setModalVisible(false);
         }}
       >
-        <View style={{backgroundColor: 'rgba(52, 52, 52, 0.8)', flex:1, 
+         <TouchableWithoutFeedback onPress={() => setModalVisible(!modalVisible)}>
+          <View style={s `flex-1 justify-center`}>
+          <View style={{backgroundColor: 'rgba(52, 52, 52, 0.8)', flex:1
     }}
         >
-        <View style={s `flex-1 justify-end `}>
+        <View style={s `flex-1 justify-end rounded`}>
         <View style={s `bg-white rounded-t-3xl pb-12`}>
         <Text style={s `ml-4 font-bold text-base mt-4 `}>Top up credit</Text>
->>>>>>> 9cab68649a133695b23a42afcd00c0171c8590de
         <View style={s `flex-row mt-7 ml-4`}>
           <View>
               <Icon name='mobile' size={40} />
@@ -355,64 +348,83 @@ const Home = ({navigation}) => {
         </View>
       </View>
              </View>
-             </View>   
+             </View>
+          </View>
+        </TouchableWithoutFeedback>
+           
            
         
         </Modal>
-            </View>
         <Modal
                 animationType="slide"  // Set the type of animation for modal appearance
-                presentationStyle='formSheet'
-                transparent={false} // Make the modal transparent
+                transparent={true} // Make the modal transparent
+                
                 visible={showModal} // Control the visibility of the modal
                 onRequestClose={() => {
-                // Handle modal closing (e.g., Android back button press)
-                setShowModal(false);
-            }}
-            >
-        <View style={s ``}>
-            <Text style={s `ml-4 font-bold text-base mt-4`}>Pay an Orange Money partner merchant</Text>
+          // Handle modal closing (e.g., Android back button press)
+          setShowModal(false);
+          
+        }}
+      >
+        <TouchableWithoutFeedback onPress={() => setShowModal(!showModal)}>
+          <View style={s `flex-1 justify-center`}>
+          <View style={{backgroundColor: 'rgba(52, 52, 52, 0.8)', flex:1
+    }}
+        >
+        <View style={s `flex-1 justify-end rounded`}>
+        <View style={s `bg-white rounded-t-3xl pb-12`}>
+        <Text style={s `ml-4 font-bold text-base mt-4 `}>Pay an Orange Money partner merchant</Text>
         <View style={s `flex-row mt-7 ml-4`}>
-            <View>
-                <Icon name='lock' size={40} />
-            </View>
-            <TouchableOpacity style={s ``}>
-                <Text style={s`mt-2 ml-4 text-base`}>Merchant code</Text>
-            </TouchableOpacity>
-        <View style = {s `ml-28`}>
-            <View style ={s `mt-3 ml-28 pl-1`}>
-                <Icon name="chevron-right" size={15}  />
-            </View>
-        </View>
-        </View>
-            <View style={s `flex-row mt-7 ml-4`}>
-            <View>
-                <Icon name='phone' size={30} />
-            </View>
-            <TouchableOpacity style={s ``}>
-                <Text style={s`mt-1 ml-4 text-base`}>Merchant phone number</Text>
-            </TouchableOpacity>
-        <View style = {s `ml-20`}>
-            <View style ={s `mt-3 ml-20`}>
-                <Icon name="chevron-right" size={15}  />
-            </View>
-        </View>
+            
+          <View>
+              <Icon name='lock' size={30} />
+          </View>
+        <TouchableOpacity style={s ``}>
+          <Text style={s`mt-1 ml-5 text-base`}>Merchant code</Text>
+        </TouchableOpacity>
+        <View style = {s `ml-24`}>
+                      <View style ={s `mt-3 ml-32`}>
+                          <Icon name="chevron-right" size={15}  />
+                      </View>
+                      </View>
         </View>
         <View style={s `flex-row mt-7 ml-4`}>
-            <View>
-                <Icon name='qrcode' size={30} />
-            </View>
-            <TouchableOpacity style={s ``}>
-                <Text style={s`mt-1 ml-4 text-base`}>QR Code</Text>
-            </TouchableOpacity>
-        <View style = {s `ml-20`}>
-            <View style ={s `mt-3 ml-32 pl-16`}>
-                <Icon name="chevron-right" size={15}  />
-            </View>
+          <View>
+              <Icon name='phone' size={30} />
+          </View>
+        <TouchableOpacity style={s ``}>
+          <Text style={s`mt-1 ml-4 text-base`}>Merchant phone number</Text>
+        </TouchableOpacity>
+        <View style = {s `ml-7`}>
+                      <View style ={s `mt-3 ml-32`}>
+                          <Icon name="chevron-right" size={15}  />
+                      </View>
+                      </View>
         </View>
+        <View style={s `flex-row mt-7 ml-4`}>
+          <View>
+              <Icon name='qrcode' size={30} />
+          </View>
+        <TouchableOpacity style={s ``}>
+          <Text style={s`mt-1 ml-4 text-base`}>QR Code</Text>
+        </TouchableOpacity>
+        <View style = {s `ml-32 pl-3`}>
+                      <View style ={s `mt-3 ml-32`}>
+                          <Icon name="chevron-right" size={15}  />
+                      </View>
+                      </View>
         </View>
-        </View>
+      </View>
+             </View>
+             </View> 
+          </View>
+        </TouchableWithoutFeedback>
+         
+           
+        
         </Modal>
+            
+        
         </View>
         </ScrollView>
     );
