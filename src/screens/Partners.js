@@ -7,7 +7,10 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 const Partners = () => {
 
     return(
-        <ScrollView>
+        <ScrollView
+        style={{flex:1,         paddingTop:Platform.OS==="android"? StatusBar.currentHeight:50,
+         }}
+        >
             <View>
                 <View>
                     <Text className = "text-lg font-bold mt-2 ml-3">Pay your merchant</Text>

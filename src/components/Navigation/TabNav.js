@@ -17,6 +17,8 @@ import TransferScreen from '../../screens/TransferScreen/TransferScreen';
 import TransactionScreen from '../../screens/TransactionScreen/TransactionScreen';
 import MerchantScreen from '../../screens/MerchantScreen/MerchantScreen';
 import SelfReversal from '../../screens/SelfReversalScreen/selfReversalScreen';
+import Scanner from '../../screens/QRCode/Scanner';
+import Webview from '../../screens/QRCode/WebView/WebView';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator()
@@ -49,6 +51,8 @@ const AccountScreen = ()=>{
         screenOptions={{headerShown:false}}
         >
         <Stack.Screen name='AccountHome' component={Account}/>
+        <Stack.Screen name='Scanner' component={Scanner}/>
+        <Stack.Screen name='WebView' component={Webview}/>
         </Stack.Navigator>
     )
 }
@@ -73,8 +77,8 @@ export default function TabNav() {
         <StatusBar />
         
         <Tab.Navigator screenOptions={{
-          tabBarActiveTintColor: 'gray'
-          
+          tabBarActiveTintColor: 'gray',
+          headerShown:false
         }}
         >
           <Tab.Screen name="Home" component={HomeScreen} options = {{headerTitle: 'Home', headerTitleAlign:'left', tabBarIcon: ({ color, size }) => (
