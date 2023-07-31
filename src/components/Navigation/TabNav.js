@@ -19,6 +19,8 @@ import MerchantScreen from '../../screens/MerchantScreen/MerchantScreen';
 import SelfReversal from '../../screens/SelfReversalScreen/selfReversalScreen';
 import Scanner from '../../screens/QRCode/Scanner';
 import Webview from '../../screens/QRCode/WebView/WebView';
+import FaceDetection from '../../screens/FacialDetection/FaceDetection';
+import ChangePin from '../../screens/ChangePin/ChangePin';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator()
@@ -49,10 +51,13 @@ const AccountScreen = ()=>{
     return(
         <Stack.Navigator
         screenOptions={{headerShown:false}}
+        initialRouteName='AccountHome'
         >
         <Stack.Screen name='AccountHome' component={Account}/>
         <Stack.Screen name='Scanner' component={Scanner}/>
         <Stack.Screen name='WebView' component={Webview}/>
+        <Stack.Screen name='FaceDetection' component={FaceDetection}/>
+        <Stack.Screen name='ChangePin' component={ChangePin}/>
         </Stack.Navigator>
     )
 }
