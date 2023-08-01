@@ -1,0 +1,41 @@
+{
+  "expo": {
+    "name": "personal",
+    "slug": "personal",
+    "version": "1.0.0",
+    "sdkVersion": "49.0.0",
+    "plugins": [
+      [
+        "react-native-vision-camera",
+        {
+          "cameraPermissionText": "$(PRODUCT_NAME) needs access to your Camera.",
+          "enableMicrophonePermission": true,
+          "microphonePermissionText": "$(PRODUCT_NAME) needs access to your Microphone."
+        }
+      ]
+    ],
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "android": {
+      "package": "com.ymcasl.personal",
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO"
+      ]
+    },
+    "ios": {
+      "bundleIdentifier": "com.ymcasl.personal",
+      "infoPlist": {
+        "NSCameraUsageDescription": "$(PRODUCT_NAME) needs access to your Camera.",
+        "NSMicrophoneUsageDescription": "$(PRODUCT_NAME) needs access to your Microphone."
+      }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "16839615-cf4c-4f0d-b6f2-e8cd1c7f2382"
+      }
+    }
+  }
+}
